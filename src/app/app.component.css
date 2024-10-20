@@ -1,0 +1,84 @@
+/* employee.component.css */
+.employee-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+h2,
+h3 {
+  text-align: center;
+  color: #333;
+}
+
+.employee-form {
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+.employee-form label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+  color: #333;
+}
+
+.employee-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.employee-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.employee-form button:hover {
+  background-color: #0056b3;
+}
+
+.employee-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.employee-list li {
+  background-color: #e9ecef;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+}
+
+.actions button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background-color: #c82333;
+}
+
+.actions button:first-child {
+  background-color: #007bff;
+}
+
+.actions button:first-child:hover {
+  background-color: #0056b3;
+}

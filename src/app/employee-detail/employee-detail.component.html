@@ -1,0 +1,17 @@
+<h3 class="mt-4">Employee List</h3>
+<ul *ngIf="employees" class="list-group">
+  <li
+    *ngFor="let employee of employees"
+    class="list-group-item d-flex justify-content-between"
+  >
+    <div>{{ employee.name }} - {{ employee.position }}</div>
+    <div>
+      <button class="btn btn-sm btn-info mr-2" (click)="onEdit(employee)">
+        Edit
+      </button>
+      <button class="btn btn-sm btn-danger" (click)="onDelete(employee.id)">
+        Delete
+      </button>
+    </div>
+  </li>
+</ul>

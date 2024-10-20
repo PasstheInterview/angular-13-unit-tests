@@ -1,0 +1,11 @@
+<!-- employee-search.component.html -->
+<form [formGroup]="searchForm">
+  <kendo-autocomplete
+    formControlName="search"
+    [data]="filteredEmployees$ | async"
+    [textField]="'name'"
+    [placeholder]="'Search employee by name'"
+    [filterable]="true"
+  >
+  </kendo-autocomplete>
+</form>

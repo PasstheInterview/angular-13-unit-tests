@@ -1,0 +1,100 @@
+<div class="container mt-4">
+  <!-- Search Employee by Name -->
+  <div class="form-group">
+    <label for="search">Search Employee</label>
+    <input
+      id="search"
+      class="form-control"
+      [formControl]="searchControl"
+      placeholder="Search employee by name"
+    />
+  </div>
+
+  <!-- Show filtered employee list as suggestions -->
+  <ul *ngIf="filteredEmployees.length > 0" class="list-group mt-2">
+    <li
+      *ngFor="let employee of filteredEmployees"
+      class="list-group-item"
+      (click)="onEmployeeSelect(employee)"
+    >
+      {{ employee.name }}
+    </li>
+  </ul>
+
+  <!-- Employee form -->
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        id="name"
+        formControlName="name"
+        class="form-control"
+        type="text"
+        placeholder="Employee Name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        formControlName="email"
+        class="form-control"
+        type="email"
+        placeholder="Employee Email"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="position">Position</label>
+      <input
+        id="position"
+        formControlName="position"
+        class="form-control"
+        type="text"
+        placeholder="Position"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="department">Department</label>
+      <input
+        id="department"
+        formControlName="department"
+        class="form-control"
+        type="text"
+        placeholder="Department"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="salary">Salary</label>
+      <input
+        id="salary"
+        formControlName="salary"
+        class="form-control"
+        type="number"
+        placeholder="Salary"
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!employeeForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+
+  <!-- Display employee list -->
+  <h3 class="mt-4">Employee List</h3>
+
+  <!-- Use the EmployeeDetailComponent -->
+  <app-employee-detail
+    [employees]="(employees$ | async) || []"
+    [onEdit]="editEmployee.bind(this)"
+    [onDelete]="deleteEmployee.bind(this)"
+  >
+  </app-employee-detail>
+</div>
